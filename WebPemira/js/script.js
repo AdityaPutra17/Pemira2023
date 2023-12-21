@@ -10,6 +10,9 @@ const subtractButton = document.getElementById("subtract-button");
 const subtractButton2 = document.getElementById("subtract-button2");
 const subtractButton3 = document.getElementById("subtract-button3");
 const subtractButton4 = document.getElementById("subtract-button4");
+const addsivitas = document.getElementById("sivitas")
+const addsivitas2 = document.getElementById("sivitas2")
+const addsivitas3 = document.getElementById("sivitas3")
 
 let currentNumber = 0;
 let currentNumber2 = 0;
@@ -32,14 +35,22 @@ function suaraSah(){
 }
 
 // Memanggil hitungTotal setiap kali ada perubahan pada angka
+//paslon 1
 addButton.addEventListener("click", () => {
-  console.log("anjay")
   currentNumber++;
   numberDisplay.textContent = currentNumber;
   hitungTotal();
   suaraSah();
 });
 
+addsivitas.addEventListener("click", ()=> {
+  currentNumber+=3;
+  numberDisplay.textContent = currentNumber;
+  hitungTotal();
+  suaraSah();
+})
+
+//paslon 2
 addButton2.addEventListener("click", () => {
   currentNumber2++;
   numberDisplay2.textContent = currentNumber2;
@@ -47,12 +58,26 @@ addButton2.addEventListener("click", () => {
   suaraSah();
 });
 
+addsivitas2.addEventListener("click", ()=> {
+  currentNumber2+=3;
+  numberDisplay2.textContent = currentNumber2;
+  hitungTotal();
+  suaraSah();
+})
+
+//paslon 3
 addButton3.addEventListener("click", () => {
   currentNumber3++;
   numberDisplay3.textContent = currentNumber3;
   hitungTotal();
   suaraSah();
 });
+addsivitas3.addEventListener("click", ()=> {
+  currentNumber3+=3;
+  numberDisplay3.textContent = currentNumber3;
+  hitungTotal();
+  suaraSah();
+})
 
 addButton4.addEventListener("click", () => {
   currentNumber4++;
@@ -61,7 +86,6 @@ addButton4.addEventListener("click", () => {
 });
 
 subtractButton.addEventListener("click", () => {
-  console.log("ajg")
   currentNumber--;
   numberDisplay.textContent = currentNumber;
   hitungTotal();
@@ -88,20 +112,5 @@ subtractButton4.addEventListener("click", () => {
   hitungTotal();
 });
 
-function tampilkanNama() {
-  const namaInput = document.getElementById('namaInput').value;
-  localStorage.setItem('nama', namaInput);
-  tampilkanHasilNama();
-}
-
-function tampilkanHasilNama() {
-  const hasilNama = document.getElementById('hasilNama');
-  const nama = localStorage.getItem('nama');
-  if (nama) {
-      hasilNama.innerHTML = `Ketua Himpunan Mahasiswa ${nama}`;
-  } else {
-      hasilNama.innerHTML = 'Nama belum dimasukkan.';
-  }
-}
 
 
